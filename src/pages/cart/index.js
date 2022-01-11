@@ -51,7 +51,7 @@ function Cart() {
     // process payment with cash
     if (data.payment === "cash") {
       const send = await axios
-        .post(`${process.env.REACT_APP_URL}/orders`, {
+        .post(`${process.env.REACT_APP_URL}orders`, {
           ...data,
           order: items,
         })
@@ -81,7 +81,7 @@ function Cart() {
     // create payment intent on the server
     const info = await axios
       .post(
-        `${process.env.REACT_APP_URL}/create-payment-intent`,
+        `${process.env.REACT_APP_URL}create-payment-intent`,
         {
           PaymentMethodType: "card",
           currency: "eur",
@@ -110,7 +110,7 @@ function Cart() {
 
     if (payment.paymentIntent.status === "succeeded") {
       const send = await axios
-        .post(`${process.env.REACT_APP_URL}/orders`, {
+        .post(`${process.env.REACT_APP_URL}orders`, {
           ...data,
           order: items,
           paymentId: payment.paymentIntent.id,

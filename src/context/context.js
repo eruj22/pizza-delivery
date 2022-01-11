@@ -42,8 +42,8 @@ export const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchPizzas(`${process.env.REACT_APP_URL}/pizzas`);
-    fetchPizzerias(`${process.env.REACT_APP_URL}/pizzerias`);
+    fetchPizzas(`${process.env.REACT_APP_URL}pizzas`);
+    fetchPizzerias(`${process.env.REACT_APP_URL}pizzerias`);
   }, []);
 
   return (
