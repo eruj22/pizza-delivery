@@ -1,0 +1,116 @@
+.orderModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    position: relative;
+    background-color: $clr-white;
+    padding-bottom: 50px;
+    min-height: 70%;
+    width: 80%;
+    max-width: 400px;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+  &--show {
+    display: flex;
+  }
+
+  &__image {
+    height: 270px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__text {
+    padding: 20px 10px;
+  }
+
+  &__name {
+    @include pizzaName;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  &__form {
+    margin-top: 20px;
+
+    & > div {
+      margin: 5px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    label {
+      cursor: pointer;
+      padding-left: 10px;
+    }
+
+    input {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      transition: box-shadow 0.3s ease-in-out;
+      background: $clr-light-grey;
+      border: 0;
+      appearance: none;
+      -webkit-appearance: none;
+
+      &:checked {
+        box-shadow: inset 0 0 0 20px $clr-orange;
+      }
+    }
+  }
+
+  &__ingredients {
+    color: $clr-text-light;
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.875rem;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: $clr-white;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      background-color: $clr-light-grey;
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+  }
+
+  &__submitBtn {
+    width: 100%;
+
+    @include ctaBtn;
+  }
+}

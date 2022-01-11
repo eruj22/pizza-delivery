@@ -1,0 +1,66 @@
+.footer {
+  background-color: $clr-dark;
+  color: $clr-light-grey;
+
+  &__shapeContainer {
+    margin-top: 50px;
+    position: relative;
+    height: 50px;
+  }
+
+  &__shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 50px;
+    }
+
+    .shape-fill {
+      fill: $clr-dark;
+    }
+  }
+
+  &__text {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    color: $clr-white;
+    font-weight: 700;
+
+    &:hover {
+      border-bottom: 2px solid $clr-white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__text {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    &__shapeContainer {
+      height: 30px;
+    }
+
+    &__shape {
+      svg {
+        height: 30px;
+      }
+    }
+  }
+}

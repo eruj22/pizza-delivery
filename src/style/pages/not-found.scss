@@ -1,0 +1,22 @@
+.notFound {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  &__title {
+    text-transform: capitalize;
+    font-size: 3.125rem;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    max-width: 220px;
+  }
+
+  &__button {
+    margin-top: 40px;
+    @include ctaBtn;
+  }
+}

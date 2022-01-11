@@ -1,0 +1,211 @@
+.singlePizzeria {
+  padding: 30px 0;
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+
+    &--center {
+      align-items: center;
+    }
+
+    &--margin {
+      margin: 70px 0 20px;
+    }
+  }
+
+  &__image {
+    padding: 6px;
+    border: 2px solid $clr-blue;
+    width: 50%;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    font-size: 1.875rem;
+  }
+
+  &__text {
+    width: 35%;
+  }
+
+  &__search {
+    @include inputSearch;
+    width: 25%;
+  }
+
+  &__offer {
+    margin-top: 30px;
+  }
+
+  &__pizzas {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 20px;
+  }
+
+  &__info {
+    width: 25%;
+  }
+
+  h4 {
+    margin-top: 30px;
+  }
+}
+
+.orderContainer {
+  margin-top: 20px;
+  min-height: 40vh;
+  position: sticky;
+  top: 20px;
+  padding: 10px 30px;
+  background-color: $clr-light-grey;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+
+  &__flex {
+    display: flex;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    @include pizzaName;
+  }
+
+  &__amount {
+    margin: 1px 10px 0 0;
+  }
+
+  &__price {
+    margin-left: auto;
+  }
+
+  &__emptyCart {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__icon {
+    margin: 5px 0;
+    font-size: 1.875rem;
+  }
+
+  &__button {
+    margin-top: auto;
+    @include ctaBtn;
+  }
+}
+
+@media (max-width: 1024px) {
+  .singlePizzeria {
+    &__pizzas {
+      width: 60%;
+    }
+
+    &__info {
+      width: 37%;
+    }
+
+    &__search {
+      width: 37%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .singlePizzeria {
+    &__flex {
+      flex-direction: column;
+
+      &--reverse {
+        flex-direction: column-reverse;
+      }
+
+      &--margin {
+        margin: 70px 0;
+      }
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__text {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    &__title {
+      font-size: 1.6rem;
+    }
+
+    &__description {
+      margin-bottom: 20px;
+    }
+
+    &__pizzas {
+      width: 100%;
+    }
+
+    &__info {
+      margin-bottom: 50px;
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      &--left,
+      &--right {
+        width: 47%;
+      }
+    }
+
+    &__search {
+      margin-top: 10px;
+      width: 50%;
+    }
+  }
+
+  .orderContainer {
+    margin-top: 0;
+    min-height: 20vh;
+
+    &__title {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 590px) {
+  .singlePizzeria {
+    &__flex {
+      &--margin {
+        margin: 30px 0;
+      }
+    }
+
+    &__info {
+      margin-bottom: 30px;
+      flex-direction: column;
+      gap: 20px;
+
+      &--left,
+      &--right {
+        width: 100%;
+      }
+    }
+
+    &__search {
+      width: 70%;
+    }
+  }
+}

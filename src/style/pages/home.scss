@@ -1,0 +1,158 @@
+.home {
+  &__hero {
+    background-image: url(../../assets/hero2-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $clr-white;
+  }
+
+  &__loader {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 3.75rem;
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+    max-width: 250px;
+  }
+
+  &__arrowDown {
+    display: inline-block;
+    margin-top: 10px;
+    color: $clr-orange;
+    font-size: 2.25rem;
+    animation: moveDown 1.5s infinite;
+  }
+
+  @keyframes moveDown {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(10px);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  &__shapeContainer {
+    position: relative;
+  }
+
+  &__shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+    }
+
+    .shape-fill {
+      fill: $clr-dark;
+    }
+  }
+
+  &__sectionTitle {
+    margin-top: 130px;
+    font-size: 1.875rem;
+    margin-bottom: 20px;
+  }
+}
+
+.pizzeria {
+  position: relative;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:hover .pizzeria__image {
+    transition: transform 0.4s ease-in-out;
+    transform: scale(1.05);
+  }
+
+  &__name {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $clr-white;
+    font-size: 1.875rem;
+    text-transform: capitalize;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    &__hero {
+      height: 90vh;
+      background-position: -200px 0;
+    }
+
+    &__text {
+      margin: 0 30px;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__shape {
+      svg {
+        height: 50px;
+      }
+    }
+
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__sectionTitle {
+      margin-top: 100px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .home {
+    &__hero {
+      background-position: -300px 0;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

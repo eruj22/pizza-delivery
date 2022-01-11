@@ -1,0 +1,27 @@
+@mixin inputSearch {
+  border: none;
+  border-radius: $border-radius-input;
+  background-color: $clr-light-grey;
+  padding: 4px 12px;
+}
+
+@mixin ctaBtn {
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  text-align: center;
+  background-color: $clr-orange;
+  border-radius: $border-radius;
+  padding: 5px 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+
+  &:hover {
+    background-color: $clr-orange-darker;
+  }
+}
+
+@mixin pizzaName {
+  text-transform: capitalize;
+  font-size: 1.125rem;
+  font-weight: 700;
+}

@@ -1,0 +1,179 @@
+.cart {
+  padding: 20px;
+  min-height: 74vh;
+
+  &__info {
+    width: 65%;
+  }
+
+  &__title {
+    text-transform: capitalize;
+  }
+
+  &__total {
+    position: sticky;
+    top: 20px;
+    width: 30%;
+    border: 2px solid $clr-light-grey;
+    border-radius: $border-radius;
+    height: fit-content;
+    padding: 30px 20px;
+
+    &--bold {
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+  }
+
+  &__item {
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    margin-left: 20px;
+  }
+
+  &__name {
+    @include pizzaName;
+  }
+
+  &__price {
+    margin-left: auto;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+
+    &--center {
+      align-items: center;
+    }
+
+    &--margin {
+      margin: 5px 0;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+  }
+
+  &__input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 6px 10px;
+    border-radius: $border-radius-input;
+    border: 2px solid $clr-text;
+
+    option {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+
+    &--error {
+      border-color: $clr-error;
+    }
+  }
+
+  &__icon {
+    font-size: 1.875rem;
+    margin-right: 10px;
+  }
+
+  &__subtitle {
+    margin: 40px 0 20px;
+  }
+
+  &__error {
+    margin-left: 40px;
+    color: $clr-error;
+    font-weight: 700;
+
+    &--marginTop {
+      margin-top: 15px;
+    }
+
+    &--big {
+      margin-left: 0;
+    }
+  }
+
+  &__backBtn {
+    margin-top: 10px;
+    @include ctaBtn;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &__submit {
+    @include ctaBtn;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  &__payment {
+    &--wrapper {
+      transition: all 0.7s ease-in-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &--hidden {
+      pointer-events: none;
+      transition: all 0.7s ease-in-out;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .cart {
+    &__info {
+      width: 55%;
+    }
+
+    &__total {
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cart {
+    width: 80%;
+    margin: 0 auto;
+
+    &__flex--responsive {
+      flex-direction: column;
+    }
+
+    &__info {
+      width: 100%;
+    }
+
+    &__total {
+      margin-top: 50px;
+      width: 100%;
+    }
+
+    &__error {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .cart {
+    width: 100%;
+
+    &__text {
+      margin-left: 10px;
+    }
+  }
+}

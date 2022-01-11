@@ -1,0 +1,50 @@
+.nav {
+  padding: 10px 0;
+  background-color: $clr-dark;
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-size: 1.875rem;
+    font-family: "Dancing Script", cursive;
+
+    a {
+      color: $clr-orange;
+    }
+  }
+
+  &__form {
+    position: relative;
+  }
+
+  &__search {
+    @include inputSearch;
+    border: 1px solid $clr-dark;
+    padding-left: 24px;
+    width: 40vw;
+  }
+
+  &__searchIcon {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    color: gray;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    &__flex {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__search {
+      width: 70vw;
+    }
+  }
+}
