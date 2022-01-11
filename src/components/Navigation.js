@@ -28,7 +28,7 @@ function Navigation() {
 
   const onSubmit = (data) => {
     axios
-      .post(`${process.env.REACT_APP_URL}/search`, {
+      .post(`${process.env.REACT_APP_URL}search`, {
         query: data.search,
       })
       .then((res) => getSearchQuery(res.data))

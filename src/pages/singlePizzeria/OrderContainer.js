@@ -43,7 +43,7 @@ function OrderContainer() {
 
       {orderList.length > 0 && (
         <Link className="orderContainer__button" to="/cart">
-          Order items for {totalAmount} €
+          Order items for <span>{totalAmount} €</span>
         </Link>
       )}
     </div>
