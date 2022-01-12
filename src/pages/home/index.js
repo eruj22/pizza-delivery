@@ -19,12 +19,16 @@ function Home() {
     <section className="home">
       <div className="home__hero">
         <div className="home__text">
-          <h1 className="home__title">Order pizza</h1>
+          <h1 className="home__title">Order pizza from anywhere</h1>
           <p className="home__subtitle">
             Get your pizza easy and quickly to your doorstep
           </p>
 
-          <a href="#pizzeria" className="home__arrowDown">
+          <a
+            href="#pizzeria"
+            className="home__arrowDown"
+            aria-label="link to all pizzerias"
+          >
             <IoIosArrowDown />
           </a>
         </div>

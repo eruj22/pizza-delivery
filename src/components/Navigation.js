@@ -65,7 +65,10 @@ function Navigation() {
                 </datalist>
               )}
 
-              <button className="nav__searchIcon">
+              <button
+                className="nav__searchIcon"
+                aria-label="button for search"
+              >
                 <AiOutlineSearch />
               </button>
             </form>

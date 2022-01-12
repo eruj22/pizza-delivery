@@ -1,6 +1,7 @@
 .home {
   &__hero {
-    background-image: url(../../assets/hero2-desktop.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../../assets/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center;
@@ -21,6 +22,7 @@
 
   &__title {
     font-size: 3.75rem;
+    max-width: 470px;
   }
 
   &__subtitle {
@@ -30,7 +32,7 @@
 
   &__arrowDown {
     display: inline-block;
-    margin-top: 10px;
+    margin: 10px 0 0 -5px;
     color: $clr-orange;
     font-size: 2.5rem;
     animation: moveDown 1.5s infinite;
@@ -115,17 +117,13 @@
 
 @media (max-width: 768px) {
   .home {
-    &__hero {
-      height: 90vh;
-      background-position: -200px 0;
-    }
-
     &__text {
       margin: 0 30px;
     }
 
     &__title {
       font-size: 2.5rem;
+      max-width: 310px;
     }
 
     &__shape {
@@ -147,10 +145,6 @@
 
 @media (max-width: 540px) {
   .home {
-    &__hero {
-      background-position: -300px 0;
-    }
-
     &__grid {
       grid-template-columns: 1fr;
     }
