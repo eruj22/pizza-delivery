@@ -1,3 +1,5 @@
+import { saveToSessionStorage } from "../utils/functions";
+
 const reducer = (state, action) => {
   const { payload, type } = action;
 
@@ -28,6 +30,8 @@ const reducer = (state, action) => {
     }
 
     const newItem = { id, price, restaurant, name, size, amount };
+
+    saveToSessionStorage("orderList", [...state.orderList, newItem]);
     return { ...state, orderList: [...state.orderList, newItem] };
   }
 
@@ -57,6 +61,7 @@ const reducer = (state, action) => {
       })
       .filter((item) => item !== "delete");
 
+    saveToSessionStorage("orderList", tempOrder);
     return { ...state, orderList: tempOrder };
   }
 

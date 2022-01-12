@@ -1,10 +1,21 @@
 import React, { useContext, useReducer } from "react";
 import reducer from "../reducer/order-reducer";
+import { getFromSessionStorage } from "../utils/functions";
+
+const getSavedOrder = () => {
+  let cart = getFromSessionStorage("orderList");
+
+  if (cart) {
+    return cart;
+  }
+
+  return [];
+};
 
 const initialState = {
   isOrderModalOpen: false,
   selectedPizzaId: null,
-  orderList: [],
+  orderList: getSavedOrder(),
 };
 
 const OrderContext = React.createContext();

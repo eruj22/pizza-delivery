@@ -28,3 +28,11 @@ export const deliveryPrice = (price) => {
 };
 
 export const availableSizes = ["Small", "Medium", "Large"];
+
+export const saveToSessionStorage = (itemName, item) => {
+  sessionStorage.setItem(itemName, JSON.stringify(item));
+};
+
+export const getFromSessionStorage = (itemName) => {
+  return JSON.parse(sessionStorage.getItem(itemName));
+};

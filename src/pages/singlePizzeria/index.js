@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Pizza from "../../components/Pizza";
-import { useAppContext } from "../../context/context";
 import { useOrderContext } from "../../context/context-order";
+import { getFromSessionStorage } from "../../utils/functions";
 import OrderContainer from "./OrderContainer";
 
 function SinglePizzeria() {
   const { name: urlName } = useParams();
-  const { pizzerias, allPizzas } = useAppContext();
   const { deleteOrder } = useOrderContext();
   const [search, setSearch] = useState("");
 
-  const selectedPizzeria = pizzerias.filter(
+  const selectedPizzeria = getFromSessionStorage("pizzerias").filter(
     (pizzeria) => pizzeria.name === urlName
   )[0];
 
-  const selectedPizzas = allPizzas.filter(
+  const selectedPizzas = getFromSessionStorage("pizzas").filter(
     (pizza) => pizza.restaurant === urlName
   );
 

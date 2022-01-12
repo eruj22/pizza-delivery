@@ -1,6 +1,7 @@
 import React, { useContext, useReducer, useEffect } from "react";
 import reducer from "../reducer/reducer";
 import axios from "axios";
+import { saveToSessionStorage } from "../utils/functions";
 
 const initialState = {
   allPizzas: [],
@@ -19,7 +20,12 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: "GET_PIZZA_LOADING" });
     try {
       const response = await axios.get(url);
-      const pizzas = response.data.pizzas;
+      let pizzas = response.data.pizzas;
+
+      if (pizzas) {
+        saveToSessionStorage("pizzas", pizzas);
+      }
+
       dispatch({ type: "GET_PIZZAS_SUCCESS", payload: pizzas });
     } catch (error) {
       console.log(error);
@@ -31,6 +37,11 @@ export const AppProvider = ({ children }) => {
     try {
       const response = await axios.get(url);
       const pizzerias = response.data.pizzeria;
+
+      if (pizzerias) {
+        saveToSessionStorage("pizzerias", pizzerias);
+      }
+
       dispatch({ type: "GET_PIZZERIAS_SUCCESS", payload: pizzerias });
     } catch (error) {
       console.log(error);
