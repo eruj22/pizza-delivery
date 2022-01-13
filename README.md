@@ -1,5 +1,7 @@
 # Pizza Delivery App
 
+![hero](https://user-images.githubusercontent.com/80893722/149289759-333ccd97-78db-48ae-8639-851298221391.jpg)
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
