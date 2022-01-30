@@ -8,6 +8,8 @@
 
 This app is pizza ordering app. First you select pizzeria and then you add all the pizzas that you want to the order. In the checkout section you select to pay with card or cash. Card payment is processed using Stripe.
 
+The project was built for Atlas hackatlon hosted by DEV.to. You can check out my post in the link: https://dev.to/eruj22/pizza-delivery-app-2f2d
+
 ### Built With
 
 The project is build with these technologies:
